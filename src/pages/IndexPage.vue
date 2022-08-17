@@ -1,8 +1,14 @@
 <template>
-  <div>
+  <div class="main_menu">
     <div class="q-pa-md">
       <q-toolbar class="bg-purple text-white shadow-2 rounded-borders">
-        <q-btn style="margin-left: 5px" flat label="Move Bangladesh" />
+        <q-img
+          style="max-height: 50px; max-width:55px"
+          src="../assets/logo.jpg"
+          alt="logo"
+        ></q-img>
+
+        <q-btn style="margin-left: 5px" flat no-caps label="Move Bangladesh" />
         <q-space />
 
         <!--
@@ -59,40 +65,8 @@
       </q-toolbar>
     </div>
     <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="css/style.css" />
       <title>Move Bangladesh</title>
     </head>
-    <body>
-      <div class="main_menu">
-        <ul>
-          <li><a href="#">About</a></li>
-          <li>
-            <a href="#">Service</a>
-            <ul>
-              <li><a href="#">Event Management </a></li>
-              <li><a href="#">Vlogers BD </a></li>
-              <li><a href="#">Advertisment </a></li>
-            </ul>
-          </li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Parking BD</a></li>
-          <li><a href="#">Home</a></li>
-        </ul>
-        <img src="../assets/logo.jpg" height="75px" alt="logo" />
-      </div>
-
-      <!-- <pre class="pregraph"> -->
-      <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. -->
-      <!-- Officiis qui, minus id animi sequi sunt ad amet praesentium  -->
-      <!-- omnis quis optio rem magni repellendus autem itaque maxime  -->
-      <!-- tenetur quaerat magnam? -->
-      <!-- </pre> -->
-
-      <!-- <img src="images/banner.jpg" height="700px" width="350px" alt="banner"> -->
-    </body>
   </div>
   <div class="q-pa-md">
     <q-form @submit="onSubmit" class="q-gutter-md">
