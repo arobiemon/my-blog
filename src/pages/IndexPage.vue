@@ -1,5 +1,63 @@
 <template>
   <div>
+    <div class="q-pa-md">
+      <q-toolbar class="bg-purple text-white shadow-2 rounded-borders">
+        <q-btn style="margin-left: 5px" flat label="Move Bangladesh" />
+        <q-space />
+
+        <!--
+        notice shrink property since we are placing it
+        as child of QToolbar
+      -->
+        <q-tabs v-model="tab" shrink>
+          <q-tab
+            no-caps
+            class="q-mr-sm my-tab"
+            name="tab1"
+            label="Parking bd"
+          />
+          <q-tab no-caps class="q-mr-sm my-tab" name="tab2" label="Contact" />
+          <q-btn-dropdown no-caps flat label="Service">
+            <div class="column">
+              <q-btn
+                color="green"
+                unelevated
+                dense
+                icon="facebook"
+                label="Facebook"
+                no-caps
+              ></q-btn>
+              <q-btn
+                color="green"
+                unelevated
+                dense
+                icon="facebook"
+                label="Facebook"
+                no-caps
+              ></q-btn>
+              <q-btn
+                color="green"
+                unelevated
+                dense
+                icon="facebook"
+                label="Facebook"
+                no-caps
+              ></q-btn>
+              <q-btn
+                color="green"
+                unelevated
+                dense
+                icon="facebook"
+                label="Facebook"
+                no-caps
+              ></q-btn>
+            </div>
+          </q-btn-dropdown>
+          <q-tab no-caps class="q-mr-sm my-tab" name="tab3" label="About" />
+          <q-tab no-caps class="q-mr-sm my-tab" name="tab3" label="Home" />
+        </q-tabs>
+      </q-toolbar>
+    </div>
     <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -34,8 +92,6 @@
       <!-- </pre> -->
 
       <!-- <img src="images/banner.jpg" height="700px" width="350px" alt="banner"> -->
-
-      
     </body>
   </div>
   <div class="q-pa-md">
@@ -86,6 +142,7 @@ export default {
     const submitResult = ref([]);
 
     return {
+      tab: ref(""),
       name: ref("Jane Doe"),
       submitResult,
 
@@ -159,5 +216,9 @@ h2 {
 }
 .main_menu ul li:hover > ul {
   display: block;
+}
+
+.my-tab {
+  margin-right: 15px;
 }
 </style>
