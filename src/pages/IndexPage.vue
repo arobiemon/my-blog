@@ -60,7 +60,7 @@
             </div>
           </q-btn-dropdown>
           <q-tab no-caps class="q-mr-sm my-tab" name="tab3" label="About" />
-          <q-tab no-caps class="q-mr-sm my-tab" name="tab3" label="Home" />
+          <q-tab no-caps class="q-mr-sm my-tab" name="tab4" label="Home" />
         </q-tabs>
       </q-toolbar>
     </div>
