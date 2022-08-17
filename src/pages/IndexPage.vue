@@ -35,91 +35,129 @@
 
       <!-- <img src="images/banner.jpg" height="700px" width="350px" alt="banner"> -->
 
-      <footer>
-        <h3>
-          Contact = arobiemon@gmail.com <br />
-          Facebook = facebook.com/arobiemon47
-        </h3>
-        <h2>Mondol IT</h2>
-      </footer>
+      
     </body>
+  </div>
+  <div class="q-pa-md">
+    <q-form @submit="onSubmit" class="q-gutter-md">
+      <q-input
+        name="name"
+        v-model="name"
+        color="primary"
+        label="Full name"
+        filled
+        clearable
+      />
+
+      <div>
+        <q-btn label="Submit" type="submit" color="primary" />
+      </div>
+    </q-form>
+
+    <q-card
+      v-if="submitResult.length > 0"
+      flat
+      bordered
+      class="q-mt-md bg-grey-2"
+    >
+      <q-card-section
+        >Submitted form contains the following formData (key =
+        value):</q-card-section
+      >
+      <q-separator />
+      <q-card-section class="row q-gutter-sm items-center">
+        <div
+          v-for="(item, index) in submitResult"
+          :key="index"
+          class="q-px-sm q-py-xs bg-grey-8 text-white rounded-borders text-center text-no-wrap"
+        >
+          {{ item.name }} = {{ item.value }}
+        </div>
+      </q-card-section>
+    </q-card>
   </div>
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { ref } from "vue";
 
-export default defineComponent({
-  name: "IndexPage",
-});
+export default {
+  setup() {
+    const submitResult = ref([]);
+
+    return {
+      name: ref("Jane Doe"),
+      submitResult,
+
+      onSubmit(evt) {
+        const formData = new FormData(evt.target);
+        const data = [];
+
+        for (const [name, value] of formData.entries()) {
+          data.push({
+            name,
+            value,
+          });
+        }
+
+        submitResult.value = data;
+      },
+    };
+  },
+};
 </script>
 <style scoped>
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-ul
-li{
-    list-style:none;
+ul li {
+  list-style: none;
 }
-a{
-    text-decoration: none;
-    display: inline-block;
+a {
+  text-decoration: none;
+  display: inline-block;
 }
-.main_menu{
-      background-image: url(../assets/banner.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position:center;
-      height:600px;
-
-
+.main_menu {
+  background-image: url(../assets/banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
 }
 
-
-
-.main_menu  ul li a{
-
-    float: right;
-    color: #000;
-    line-height: 60px;
-    padding: 0 40px;
-    font-size: 20px;
-    position: relative;
-
+.main_menu ul li a {
+  float: right;
+  color: #000;
+  line-height: 60px;
+  padding: 0 40px;
+  font-size: 20px;
+  position: relative;
 }
-.main_menu ul li a:hover{
-    color: coral;
-
-
+.main_menu ul li a:hover {
+  color: coral;
 }
-.pregraph{
-    /* float: right; */
-    font-family: sans-serif;
-    color: brown;
-    font-size: 20px;
-    float: right;
+.pregraph {
+  /* float: right; */
+  font-family: sans-serif;
+  color: brown;
+  font-size: 20px;
+  float: right;
 }
-footer{
-    /* background-color:cornflowerblue; */
-    font-family: sans-serif;
-
+footer {
+  /* background-color:cornflowerblue; */
+  font-family: sans-serif;
 }
- h2{
-    /* background-color: cornflowerblue; */
-    float: right;
-
+h2 {
+  /* background-color: cornflowerblue; */
+  float: right;
 }
-
-
 
 .main_menu ul ul {
-    display:none;
+  display: none;
 }
 .main_menu ul li:hover > ul {
-    display: block;
-
+  display: block;
 }
-
 </style>
